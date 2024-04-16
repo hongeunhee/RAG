@@ -43,8 +43,7 @@ This repository contains simple application examples for RAG.
    1) Refined or formalized to meet the needs of the application
    2) Delivering the output
 
-7) Feedback loop (optional)
-In some implementations, there may be a feedback mechanism to evaluate the effectiveness of the retrieved document and the quality of the final output.
+7) Feedback loop(optional): In some implementations, there may be a feedback mechanism to evaluate the effectiveness of the retrieved document and the quality of the final output.
 
 ## RAG Implementation with LangChain
 **Langchain** is a framework designed to simplify application generation using LLM.
