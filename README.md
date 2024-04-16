@@ -55,7 +55,7 @@ In some implementations, there may be a feedback mechanism to evaluate the effec
 
 1) Create a RunnableParallel object with two entries in the first step
     1) The first item, context, contains document results imported from the searcher
-    2) The second item, question, copies it using runnablepastthrough to convey the question to the user's original question
+    2) The second item, question, copies it using RunnablePassThrough to convey the question to the user's original question
 
 2) Feed the Dictionary to the prompt component. Configure the prompt using the user input question and the searched document context, and output PromptValue
 
