@@ -1,5 +1,12 @@
-'''This code uses Hugging Face's Transformers library to answer questions about YouTube video clips using LangChain. 
-Before running this code, you must install the Transformers library.'''
+# -*- coding: utf-8 -*-
+"""
+Created on Thu May 23 16:30:56 2024
+
+@author: Hui, Hong
+This code uses Hugging Face's Transformers library to answer questions about YouTube video clips using LangChain. 
+Before running this code, you must install the Transformers library.
+"""
+
 !pip install google-api-python-client google-auth-oauthlib transformers
 from googleapiclient.discovery import build
 from google_auth_oauthlib.flow import InstalledAppFlow
