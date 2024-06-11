@@ -126,10 +126,10 @@ def parse_folder_to_dataframe(folder_path):
     parsed_data = parse_folder(folder_path)
     if not parsed_data:
         return pd.DataFrame()
-    columns = infer_column_names(parsed_data)
+    columns = infer_column_names(parsed_data) #자동 식별 어려울 때 열이름 사용자에게 받는 부분 추가해야 함
     df = pd.DataFrame(parsed_data, columns=columns)
-    #df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce')
-    df['timestamp'] = pd.to_datetime(df['timestamp'], format='[%d/%b/%Y:%H:%M:%S', errors='coerce')
+    #df['timestamp'] = pd.to_datetime(df['timestamp'], errors='coerce') #테스트 해봐야 함
+    df['timestamp'] = pd.to_datetime(df['timestamp'], format='[%d/%b/%Y:%H:%M:%S', errors='coerce') 
     dataframe = df.sort_values(by='timestamp', ascending=True)
     return dataframe
      
