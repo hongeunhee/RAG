@@ -18,8 +18,8 @@ from langchain.chains import ConversationalRetrievalChain
 from langchain.vectorstores import DocArrayInMemorySearch
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 
-st.set_page_config(page_title="LLM: Chat with RESUME", page_icon="🦜")
-st.title("🦜 LLM: Chat with RESUME")
+st.set_page_config(page_title="Langchain: Chat About Your Resume", page_icon="🦜")
+st.title("🦜 Langchain: Chat About Your Resume")
 
 
 @st.cache_resource(ttl="1h")
