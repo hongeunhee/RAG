@@ -12,8 +12,6 @@ import streamlit as st
 import os
 import pandas as pd
 import google.generativeai as genai
-from IPython.display import Markdown, display
-import textwrap
 from ipaddress import ip_address
 import re
 from collections import Counter
@@ -296,10 +294,6 @@ class ChatSession:
         self.history.append(response_text)
         
         return response_text
-        
-# Create a helper function that will convert the markdwon into nicely formatted text
-def to_markdown(text):
-    return Markdown(textwrap.indent(text, '>', predicate=lambda _: True))
  
 if __name__=="__main__":
     
