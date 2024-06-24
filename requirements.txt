@@ -1,11 +1,7 @@
 streamlit
-os
 pandas
 google.generativeai
-re
-Counter
-parser
-textwrap
 ip_address
 Markdown
 display
+python-dateutil
