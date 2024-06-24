@@ -310,7 +310,6 @@ if __name__=="__main__":
     filtered_logs = filter_logs_within_1_minute(dic_df)
     
     ### Analysis Results Output Steps ###
-    #api_key = 'AIzaSyAij_2eLy-nzQVRDouKKur-1TfObHYi3E8' 
     session = ChatSession(gemini_api_key) 
     ### Default Output ###
     atk_scs, abnormal = attacked_web_log(filtered_logs)
