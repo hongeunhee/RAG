@@ -27,10 +27,10 @@ class ChatSession:
         response = self.model.generate_content(context)
 
         # Extract text from the response object
-        if response.candidates:
+        if response.candidates and response.candidates[0].content.parts:
             response_text = response.candidates[0].content.parts[0].text
         else:
-            raise ValueError("The response object does not contain any candidates.")
+            raise ValueError("Response candidates or parts are empty.")
         
         # Append the question and response after the full response is received
         self.history.append(question)
