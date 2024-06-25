@@ -18,8 +18,8 @@ from collections import Counter
 from dateutil import parser
 
 # Start Streamlit app
-st.set_page_config(page_title="Vulnerability Scanner: Analyze your weblog data", page_icon="🔍")
-st.title("🔎 Vulnerability Scanner: Analyze your weblog data")
+st.set_page_config(page_title="Vulnerability Analysis: Analyze your weblog data", page_icon="🔍")
+st.title("🔎 Vulnerability Analysis: Analyze your weblog data")
 
 folder_path = st.sidebar.text_input(label="File path", type="default")
 
