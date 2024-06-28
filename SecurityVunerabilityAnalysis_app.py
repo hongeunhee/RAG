@@ -80,7 +80,7 @@ def parse_uploaded_files(uploaded_files):
     parsed_data = []
     for uploaded_file in uploaded_files:
         try:
-            file_contents = uploaded_file.getvalue().decode("utf-8")
+            file_contents = uploaded_file.getvalue().decode('utf-8')
             lines = file_contents.splitlines()
             delimiter = find_best_delimiter(lines)
             for line in lines:
@@ -180,7 +180,7 @@ def is_private_ip(ip):
     return False
     
 # Identifying web logs suspected of being used in attacks after the hacker has scanned vulnerabilities
-def attacked_web_log(filtered_logs):
+def attacked_web_log(filtered_logs, dataframe):
     # Extracted an IP list with more than 1000 404 or 200 errors within 1 second
     filtered_logs = pd.DataFrame(filtered_logs).sort_values(by='ip_address')
     ip_counts = pd.DataFrame(filtered_logs['ip_address'].value_counts())
@@ -289,10 +289,9 @@ def main():
                 filtered_logs = filter_logs_within_1_minute(dic_df)
     
                 ### Analysis Results Output Steps ###
-                #gemini_api_key = 'AIzaSyAij_2eLy-nzQVRDouKKur-1TfObHYi3E8' 
                 session = ChatSession(gemini_api_key) 
                 ### Default Output ###
-                atk_scs, abnormal = attacked_web_log(filtered_logs)
+                atk_scs, abnormal = attacked_web_log(filtered_logs, dataframe)
                 ### Outputs payload analysis results during the hacker's vulnerability scan period ###
                 st.write("The results of the payload analysis during the hacker's vulnerability scan are as follows.")
                 lst = atk_scs['request'].tolist()
