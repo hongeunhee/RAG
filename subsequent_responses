@@ -30,11 +30,10 @@ class ChatSession:
         if response.candidates and response.candidates[0].content.parts:
             response_text = response.candidates[0].content.parts[0].text
         else:
-            raise ValueError("Response candidates or parts are empty.")
+            raise ValueError("No valid response received from the model.")
         
         # Append the question and response after the full response is received
-        self.history.append(question)
-        self.history.append(response_text)
+        self.history.append((question, response_text))
         
         return response_text
 
